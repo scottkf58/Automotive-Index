@@ -55,7 +55,6 @@ CREATE INDEX index4 ON car_models (id, make_code, make_title, model_code, model_
 WHERE year BETWEEN '2010' AND '2015';
 -- Time: 0.197 ms
 
-
 CREATE INDEX index5 ON car_models (id, make_code, make_title, model_code, model_title, year)
 WHERE year = '2010';
 -- Time: 0.549 ms
