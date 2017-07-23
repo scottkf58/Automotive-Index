@@ -10,3 +10,9 @@ CREATE TABLE IF NOT EXISTS car_models
  year integer NOT NULL,
  PRIMARY KEY (id)
 )
+
+CREATE INDEX make_titles
+  ON car_models (make_title);
+
+CREATE INDEX model_titles
+  ON car_models (model_title);

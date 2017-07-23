@@ -2,6 +2,8 @@
 
 CREATE DATABASE indexed_cars WITH OWNER indexed_cars_us;
 
+DROP DATABASE IF EXISTS indexed_cars;
+
 \c indexed_cars indexed_cars_user;
 \i scripts/car_models.sql
 \i scripts/car_model_data.sql
@@ -39,26 +41,12 @@ SELECT * FROM car_models
 WHERE year = '2010';
 -- Time: 31.385 ms
 
-CREATE INDEX index1 ON car_models (make_title)
-WHERE make_code = 'LAM';
--- Time: 0.294 ms
 
-CREATE INDEX index2 ON car_models (make_title)
-WHERE make_code = 'GT-R';
--- Time: 0.175 ms
+CREATE INDEX make_titles
+  ON car_models (make_title);
 
-CREATE INDEX index3 ON car_models (make_code, model_code, model_title, year)
-WHERE make_code = 'LAM';
--- Time: 0.177 ms
-
-CREATE INDEX index4 ON car_models (id, make_code, make_title, model_code, model_title, year)
-WHERE year BETWEEN '2010' AND '2015';
--- Time: 0.197 ms
-
-CREATE INDEX index5 ON car_models (id, make_code, make_title, model_code, model_title, year)
-WHERE year = '2010';
--- Time: 0.549 ms
-
+CREATE INDEX model_titles
+  ON car_models (model_title);
 
 
 
