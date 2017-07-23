@@ -45,16 +45,20 @@ WHERE make_code = 'LAM';
 
 CREATE INDEX index2 ON car_models (make_title)
 WHERE make_code = 'GT-R';
+-- Time: 0.175 ms
 
--- CREATE INDEX index3 ON car_models (make_code, model_code, model_title, year)
--- WHERE make_code = 'LAM';
+CREATE INDEX index3 ON car_models (make_code, model_code, model_title, year)
+WHERE make_code = 'LAM';
+-- Time: 0.177 ms
 
--- CREATE INDEX index4 ON car_models (id, make_code, make_title, model_code, model_title, year)
--- WHERE year BETWEEN '2010' AND '2015';
+CREATE INDEX index4 ON car_models (id, make_code, make_title, model_code, model_title, year)
+WHERE year BETWEEN '2010' AND '2015';
+-- Time: 0.197 ms
 
 
--- CREATE INDEX index5 ON car_models (id, make_code, make_title, model_code, model_title, year)
--- WHERE year = '2010';
+CREATE INDEX index5 ON car_models (id, make_code, make_title, model_code, model_title, year)
+WHERE year = '2010';
+-- Time: 0.549 ms
 
 
 
