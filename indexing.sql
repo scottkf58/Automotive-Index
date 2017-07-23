@@ -48,6 +48,13 @@ CREATE INDEX make_titles
 CREATE INDEX model_titles
   ON car_models (model_title);
 
+-- Index Times
+-- Time: 1.816
+-- Time: 1.112
+-- Time: 64.135
+-- Time: 12.587
+
+
 
 
 
